@@ -8,9 +8,9 @@ If you start to manufacture and sell this lock design, I'd be interested to have
 
 I'm calling this lock design "Community Core", similar to "Community Pick" developed by Lock Picking Lawyer and Bosnianbill (https://youtu.be/pelD237owcc).
 
-## Initial release notes
+## WIP: Initial release notes
 
-This is still work in progress version and not a ready design.
+This is still work in progress (WIP) version and is not a ready design yet.
 
 - All the disks have true gates in zero cut position. It should be obvious how to move the gate for each disk if you understand how disk detainer locks work in general.
 - I'm not happy with the mechanical strength of this lock; I now think that it would be better to limit the movement of code disks similar to original Abloy Classic design. The reason I avoided that design is that it leaves more space inside the lock and allows more brute force attacks especially when the cylinder is made out of brass. However, that design allows overlapping the cuts and the limiter during the disk movement and doesn't require so much empty space near the disk locking bar area. This initial design uses the disk locking bar as both disk rotation limiter and disk locking mechanism and the extra space needed makes both functions weaker in practice.
@@ -31,17 +31,19 @@ The design of this lock core is based on Abloy Classic design which was original
 
 Key points of the design and differences to original Abloy Classic design and rationale for each change:
 
-- Maximum code disk orientation range has been extended from 0-90 degress to 0-108 degrees. The rationale for this change is to make the "50-50" problem documented by Matt "Huxleypig" Smith impossible to sidestep for the attacker.
-- In addition to classic sidebar there's another disk locking bar which has narrower cut in the housing forcing it to bind into code disk cuts before the actual sidebar is pressed against the code disks. This prevents rotating the code disks to search for gate positions while applying pressure to sidebar.
-- The code disks and spacers have interlocking profile to avoid decoding attacks that depend on pushing a thin tool between the disks to feel the gates.
-- The code disks are closer to each other in the keyhole to prevent inserting a picking tool that can be rotated in the space between the disks (most Abloy designs have about 0.5 mm space between each disk).
-- There's a disk between the end of the keyhole and the cylinder. The intent is to avoid decoding by using thin wire that goes through the keyhole and turns back to sidebar from the back. For the same reason, the from of the housing has been shaped to match the spacer profile.
-- A tungsten carbide insert has been added to the front of the housing to make milling attack harder to execute. (https://youtu.be/uj4myR2XlWc)
-- A backing nut has been added to the end of the lock to prevent brute force attack where a punch is used to push all disks out of the back of the lock housing. This nut is not needed for front loading designs that should use similar design to Abloy padlocks (that is, a screwed front with a retainer screw accessible only when lock is open).
-- A regular inner circlip is used to hold the disks inside the lock to make handling the core easier while rekeying the lock.
+- Maximum code disk orientation range has been extended from 0-90 degress to 0-108 degrees. The rationale for this change is to make the "problem 50" documented by Matt "Huxleypig" Smith impossible to sidestep for the attacker. (https://youtu.be/GBaihzVxs5Y?t=1740). In practise, the picker would need to adjust 108 degrees of rotation per disks but the remaining space for the pick movement is 180-108 = 72 degrees. In addition, the circular inner edge requires any flag-like picking tool to reach the edge of the keyhole to successfully turn the disk and this design hopefully prevents any simple picking tool from being successful. ![3D view of the solution to "problem 50"](images/problem-50-solved.png)
+- In addition to classic sidebar there's another disk locking bar which has narrower cut in the housing forcing it to bind into code disk cuts before the actual sidebar is pressed against the code disks. This prevents rotating the code disks to search for gate positions while applying pressure to sidebar. ![2D view of the disk locking bar"](images/disk-locking-bar.png)
+- The code disks and spacers have interlocking profile to avoid decoding attacks that depend on pushing a thin tool between the disks to feel the gates. ![3D view profile of code disks and spacers"](images/interlocking-spacers-and-code-disks.png)
+- The code disks are closer to each other in the keyhole to prevent inserting a picking tool that can be rotated in the space between the disks (most Abloy designs have about 0.5 mm space between each disk). ![3D view to show that there's no extra space between the code disks insiden the keyhole"](images/no-space-between-disks-in-keyhole.png)
+- There's a disk between the end of the keyhole and the cylinder. The intent is to avoid decoding by using thin wire that goes through the keyhole and turns back to sidebar from the back. For the same reason, the from of the housing has been shaped to match the spacer profile. ![3D view of the fully filled last spacer disk](images/filled-last-spacer.png)
+- A tungsten carbide insert has been added to the front of the housing to make milling attack harder to execute. (https://youtu.be/uj4myR2XlWc) ![3D view of the tungsten carbide bit insert](images/tungsten-carbide-insert.png)
+- A backing nut has been added to the end of the lock to prevent brute force attack where a punch is used to push all disks out of the back of the lock housing. This nut is not needed for front loading designs that should use similar design to Abloy padlocks (that is, a screwed front with a retainer screw accessible only when lock is open). ![3D view of the backing nut to prevent destructive attack against the cam lock](images/backing-nut.png)
+- A regular inner circlip is used to hold the disks inside the lock to make handling the core easier while rekeying the lock. ![3D view of the circlip](images/circlip.png)
 - The initial example design is trying to implement something similar to Abloy CL100 cam lock. The example design uses a bit longer housing to add one extra disk and cylinder rotation limiter. And the front of the housing is thicker to add extra protection against physical attacks.
 
 In total, I think this design has 4 additional parts compared to original Abloy Classic design: disk locking bar, one extra filled spacer at the end of keyhole, cylinder rotation limiter and the extra backing nut for the cam lock design.
+
+It should be obvious how to use this same design for padlocks and doors. Practically just copy the housing used in Abloy Classic and add the second groove in the housing for the disk locking bar.
 
 # Additional design points
 
@@ -93,6 +95,8 @@ If you think that the locks we commonly use are good already, see this for extra
 - Would it be better to have roughness or even small teeths in disk locking bar surface in the disks? The idea of such design is to make it harder to feel anything from the actual sidebar if the disk can be moved slightly while locked.
 - Should the sidebar be slightly thinned for the actual code disks portion? That would make it sure that manufacturing tolerances cannot make it possible to feel the code disk grinding against the sidebar while the disks are not locked (because the first and last disks are able to keep the sidebar from touching the code disks).
 - Should there be more free space between the disks to allow more wear and tear? Is it possible to implement this without leaving space for the picking tip to rotate?
+- Is this lock design still vulnerable to fast destructive method using high torque? Example attack: https://youtu.be/CNzWrEujKQw
+- Would it be a good idea to implement wobbly spacer disks similar to one shown by Matt Smith (https://youtu.be/13bKCOfzaZM)? The difference is that because the tension must be removed to rotate the disks with community core design, the idea could actually work.
 
 ## Future development idea
 
@@ -110,13 +114,12 @@ I think that the half-pipe keyhole shape in this design is at least as safe as t
 
 ## Additional information about disc detainer locks
 
-- https://youtu.be/rMIEPkaadq0
-- https://youtu.be/GBaihzVxs5Y
-- https://youtu.be/6poAidpNEAc
-- https://youtu.be/JdpP7yPY4ls
-- https://youtu.be/nT0PDQUZi74
-
-- https://toool.nl/Publications - Han Fey articles
+- Generic info about mechanical locks: Black Hat Locksmithing - SHA2017 - Matt Smith: https://youtu.be/6poAidpNEAc
+- Generic info about disk detainer locks by Bosnianbill: https://youtu.be/rMIEPkaadq0
+- Adventures in Discworld - OzSecCon 2018 - Matt Smith: https://youtu.be/GBaihzVxs5Y
+- Generic info about picking mechanical locks with tentative method by Schuyler Towne: https://youtu.be/JdpP7yPY4ls
+- We need to start attacking Disc Detainer locks. Shmoocon Firetalks 2011: https://youtu.be/nT0PDQUZi74
+- https://toool.nl/Publications - Han Fey articles about Abloy all locks manufactured before 2006.
 
 ## Special thanks
 
@@ -125,6 +128,7 @@ I think that the half-pipe keyhole shape in this design is at least as safe as t
 - Matt "Huxleypig" Smith for documenting vulnerabilities of many disk detainer locks publicly.
 - Tarehjerne for creating a very clear video about Protec 2 (https://youtu.be/6zVSJ_wauwg) and providing info about disk detainer locks in general.
 - idanhurja for publishing lots of information about modern Abloy locks including publicly showing the picking tip he used for Protec 2 (https://youtu.be/AsG90UGRTpw) and documenting the similarities and differences of Exec and Easy: https://youtu.be/bH5936vuLlY and https://youtu.be/AEXP4zczivM
+- Schuyler Towne for publishing easy to explanations about picking locks with tentative method in general.
 
 ## Abloy Classic measurements (official numbers unknown)
 
