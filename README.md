@@ -62,6 +62,18 @@ It should be obvious how to use this same design for padlocks and doors. Practic
 - Discs are nearly next to each other in keyway to prevent rotating picking heads between discs.
 - The parts should be manufactured with 0.1 mm precision to have a good lock. I think having 0.5 mm precision should still end up a working lock but the tolerances would be so bad that tentative attack would be more feasible
 
+## Intellectual property rights
+
+Intellectual property (IP) rights generally include copyright, design patents and patents. This design is original design by Community Core developers so the copyright situation is clear: the copyright is hold by the developers but all the data is licensed under Apache License 2.0 which grants perpetual, no-charge and royalty-free license (https://www.apache.org/licenses/LICENSE-2.0.html#copyright) and grants a perpetual, worldwide,no-charge and royalty-free patent license from all the developers (https://www.apache.org/licenses/LICENSE-2.0.html#patent). However, developers can only grant licenses on copyright and patents they control so *anybody starting to manufacture this lock may be infringing some yet-unknown patent owned by somebody else*. If you plan to manufacture this lock commercially, we recommend that you do your own patent research first. However, you don't need to ask for permission or pay anything to the authors of this design. Please, read the license for details.
+
+In short, Apache License 2.0 guarantees that all the work by [authors](AUTHORS) is licensed to you no-charge and royalty-free but authors cannot grant IP rights outside their control. Specifically this project has not executed any patent search work to try to locate any possibly design infringing patents. That said, I'm not aware of any infringing patents.
+
+As for the design patents, as the visual design presented here looks similar to [Abloy Profile which has been manufactured since 1977 and its patents have expired in 1999](http://www.lockwiki.com/index.php/Abloy_Profile), it should be pretty safe to assume this design doesn't infringe any non-expired design patents.
+
+## Known infringing patents
+
+None known but this is not a promise that none can exist due the way patent system works.
+
 ## Development
 
 Want to contribute? Great! First you must agree to the same LICENSE provided to all users of this design. Be warned that in practice, this removes your right to sue anybody using this design interfering any patent under your control currently or in the future. If you don't own patents or do not plan to prevent others from using this design for free, this should not prevent you from contributing to this project.
