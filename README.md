@@ -26,7 +26,7 @@ This is still work in progress (WIP) version and is not a ready design yet.
 - Use Outliner view at the top right of the window to show and hide the parts of the lock. Use the "Eye" icon to hide parts in viewport area to better see the inside of the lock.
 - Use small buttons on the top right of the viewport area to toggle the X-ray view or wireframe view to see more details.
 
-## Design
+# Design
 
 The design of this lock core is based on Abloy Classic design which was originally designed in 1905 and has been commercially sold since 1920 so basic part of the design should be patent free worldwide. The patent system being as broken as it is I cannot know if some part of the design infringes some patent somewhere. This is all my own design except for the Abloy Classic compatible parts.
 
@@ -36,7 +36,7 @@ Key points of the design and differences to original Abloy Classic design and ra
 - In addition to classic sidebar there's another disk locking bar which has narrower cut in the housing forcing it to bind into code disk cuts before the actual sidebar is pressed against the code disks. This prevents rotating the code disks to search for gate positions while applying pressure to sidebar. ![2D view of the disk locking bar"](images/disk-locking-bar.png)
 - The code disks and spacers have interlocking profile to avoid decoding attacks that depend on pushing a thin tool between the disks to feel the gates. ![3D view profile of code disks and spacers"](images/interlocking-spacers-and-code-disks.png)
 - The code disks are closer to each other in the keyhole to prevent inserting a picking tool that can be rotated in the space between the disks (most Abloy designs have about 0.5 mm space between each disk). ![3D view to show that there's no extra space between the code disks insiden the keyhole"](images/no-space-between-disks-in-keyhole.png)
-- There's a disk between the end of the keyhole and the cylinder. The intent is to avoid decoding by using thin wire that goes through the keyhole and turns back to sidebar from the back. For the same reason, the from of the housing has been shaped to match the spacer profile. ![3D view of the fully filled last spacer disk](images/filled-last-spacer.png)
+- There's a filled disk between the end of the keyhole and the cylinder. The intent is to avoid decoding by using thin wire that goes through the keyhole and turns back to the sidebar from the back. For the same reason, the inside of the lock face part of the housing has been shaped to match the spacer profile. ![3D view of the fully filled last spacer disk](images/filled-last-spacer.png)
 - A tungsten carbide insert has been added to the front of the housing to make milling attack harder to execute. (https://youtu.be/uj4myR2XlWc) ![3D view of the tungsten carbide bit insert](images/tungsten-carbide-insert.png)
 - A backing nut has been added to the end of the lock to prevent brute force attack where a punch is used to push all disks out of the back of the lock housing. This nut is not needed for front loading designs that should use similar design to Abloy padlocks (that is, a screwed front with a retainer screw accessible only when lock is open). ![3D view of the backing nut to prevent destructive attack against the cam lock](images/backing-nut.png)
 - A regular inner circlip is used to hold the disks inside the lock to make handling the core easier while rekeying the lock. ![3D view of the circlip](images/circlip.png)
@@ -46,7 +46,7 @@ In total, I think this design has 4 additional parts compared to original Abloy 
 
 It should be obvious how to use this same design for padlocks and doors. Practically just copy the housing used in Abloy Classic and add the second groove in the housing for the disk locking bar.
 
-# Additional design points
+## Additional design points
 
 - This lock's security is strictly based on key cuts. There will be no patents to prevent purchasing key blanks or locks parts. If somebody takes a photo of your key, he or she can manufacture a key copy and open your lock. I wouldn't recommend anybody to use master key system for any locks but if you truly want such thing regardless of lesser security, feel free to add more true gates to discs and follow the master keying hierarchy Abloy did during 1980s. Note that each extra true gate in any disc for master key reduces possible key space in half. For example, two master cuts in one lock reduces key space to 25% of the original. Note that if you want to use profiled keys, only zero cut discs can have anything on the outside curve of the key. For an example of 3D printed keys, see this: https://www.thingiverse.com/thing:4191477
 - Because this lock's security is not based on patents, the key will not have any "interactive elements" or "passive elements" which some high security lock manufacturers use just to be able to get patents.
@@ -63,19 +63,19 @@ It should be obvious how to use this same design for padlocks and doors. Practic
 - Discs are nearly next to each other in keyway to prevent rotating picking heads between discs.
 - The parts should be manufactured with 0.1 mm precision to have a good lock. I think having 0.5 mm precision should still end up a working lock but the tolerances would be so bad that tentative attack would be more feasible
 
-## Ideology - why I'm doing this
+# Ideology - why I'm doing this
 
 I'm hoping to create a design that would be freely used by everybody (hence the Apache 2.0 license that has a section about patents). My hope is that if a freely available safe lock design is available, some cheap Chinese manufacturers would start producing better locks instead of poor quality abloy classic clones with square keyhole and zero false gates that they do nowadays. And if the most basic cheap Chinese lock was a secure disk detainer lock in the future, MasterLock and friends would need to take a hint, too. I don't think my design is the best you can do but I think it's the *minimum* you should do.
 
 My personal thinking is that the whole patent system should be stopped immediately because it's no longer for the good of the society as it was originally designed. Now it just hinders innovation. I would just allow copyrighting specific key forms and that should be enough for the needs that Abloy tries to do with their patents – namely preventing anybody else but Abloy from selling key blanks.
 
-As such, my plan is to publish the design without patents and without costs. As a result, I have to accept that Abloy will not use it because of Apache 2.0 patent clause would require them to allow other people to use their patents. On the other hand, nobody but Abloy can use the squeecing keyway design that's inside the Abloy Easy locks because Abloy owns the worldwide patent. So as a result, *nobody* can manufacture a lock that has all the best parts that I can think of. This is the result of our current patent system and it's sad.
+As such, my plan is to publish the design without patents and without costs. As a result, I have to accept that Abloy will not use it because of Apache 2.0 patent clause would require them to allow other people to use their patents. On the other hand, nobody but Abloy can use the squeecing keyway design that's inside the Abloy Easy locks because Abloy owns the worldwide patent. So as a result, *nobody* can manufacture a lock that has all the best parts that I can think of. This is the result of our current patent system and it's just sad.
 
-In long run, I think I'll do two or three designs because patents do not limit personal manufacturing and if/when we have metal 3D printers in the near future (probably way sooner than year 2040 when the Abloy Easy patent has expired) anybody can just print the lock core with the best available parts for themselves. As such, part of my design objective will be about trying to create design that can withstand over torque attacks even with printed parts (which nowadays use sintered metal which is not as strong as e.g. real hardened steel). Of course, you can print parts out of Inconel if you're rich enough.
+In long run, I think I'll do two or three designs because patents do not limit personal manufacturing and if/when we have metal 3D printers in the near future (probably way sooner than year 2040 when the Abloy Easy patent has expired) anybody can just print the lock core with the best available parts for themselves. As such, part of my design objective will be about trying to create design that can withstand over-torque attacks even with printed parts (which nowadays use sintered metal which is not as strong as e.g. real hardened steel). In practice this may require making some parts intentionally weak to make the lock fail locked if too much force is applied. Of course, you can always print all parts out of Inconel if you're rich enough.
 
 ## Intellectual property rights
 
-Intellectual property (IP) rights generally include copyright, design patents and patents. This design is original design by Community Core developers so the copyright situation is clear: the copyright is hold by the developers but all the data is licensed under Apache License 2.0 which grants perpetual, no-charge and royalty-free license (https://www.apache.org/licenses/LICENSE-2.0.html#copyright) and grants a perpetual, worldwide,no-charge and royalty-free patent license from all the developers (https://www.apache.org/licenses/LICENSE-2.0.html#patent). However, developers can only grant licenses on copyright and patents they control so *anybody starting to manufacture this lock may be infringing some yet-unknown patent owned by somebody else*. If you plan to manufacture this lock commercially, we recommend that you do your own patent research first. However, you don't need to ask for permission or pay anything to the authors of this design. Please, read the license for details.
+Intellectual property (IP) rights generally include copyright, design patents and patents. This design is original design by Community Core developers so the copyright situation is clear: the copyright is hold by the developers but all the information provided by this project is licensed under Apache License 2.0 which grants perpetual, no-charge and royalty-free license (https://www.apache.org/licenses/LICENSE-2.0.html#copyright) and grants a perpetual, worldwide, no-charge and royalty-free patent license from all the developers (https://www.apache.org/licenses/LICENSE-2.0.html#patent). However, developers can only grant licenses on copyright and patents they control so *anybody starting to manufacture this lock may be infringing some yet-unknown patent owned by somebody else*. If you plan to manufacture this lock commercially, we recommend that you do your own patent research first. However, you don't need to ask for permission or pay anything to the authors of this design. Please, read the license for details.
 
 In short, Apache License 2.0 guarantees that all the work by [authors](AUTHORS) is licensed to you no-charge and royalty-free but authors cannot grant IP rights outside their control. Specifically this project has not executed any patent search work to try to locate any possibly design infringing patents. That said, I'm not aware of any infringing patents.
 
@@ -85,7 +85,7 @@ As for the design patents, as the visual design presented here looks similar to 
 
 None known but this is not a promise that none can exist due the way patent system works. This section will be extended if any known patents appear.
 
-## Development
+# Development
 
 Want to contribute? Great! First you must agree to the same LICENSE provided to all users of this design. Be warned that in practice, this removes your right to sue anybody using this design interfering any patent under your control currently or in the future. If you don't own patents or do not plan to prevent others from using this design for free, this should not prevent you from contributing to this project.
 
@@ -129,13 +129,13 @@ As patents do not prevent personal manufacturing, a design that can be printed u
 
 I think that the half-pipe keyhole shape in this design is at least as safe as the square keyway profile used in Abloy Easy. However, the half-pipe keyhole has worse usability and the key is slightly harder to insert into the lock.
 
-## Known theoretical methods to attack this design
+# Known theoretical methods to attack this design
 
 - Brute force: with default 10 effective discs there are 7^10 or around 280 million possible combinations. Because the rear disc must be moved for each try to open the lock, the material stress for automated testing of combinations should require replacing picking tools during the brute force testing. Assuming that 10 combinations can be tested per second, brute force method should have 50% change of opening the lock after about 160 days and all combinations can be tested in under a year. This should be more than enough for any mechanical lock needs.
 - Possible tentative attack #1: when disc lock is activated and sidebar is slightly pressed, tolerances probably allow moving discs a little bit even when disk locking bar is activated. This is probably enough to test if a disc is uncut or has true or false gate at the sidebar. It's still unknown if the disks can be efficiently turned to repeatedly test the disks without needing to set all disks again from back to front for each test. The best pick I can think of would be to use half of 6 mm outer diameter and 5 mm inner diameter steel pipe with code disk locations cut to max depth as tensioning tool, use flag-like picking tool to turn the code disks using the space between the tensioning tool and inside surface of the keyhole. I think this attack is hard to implement because maximum difference between two disks next to each other is 108 degrees and the case where the disk closer to back needs to have max depth cut and next disk closer to opening is zero cut, the max depth cut disk cannot be rotated without moving the closer disk first. Also note that all code disks must be first set to correct orientations before first and last disk can be turned to max rotation to avoid disk locking bar from stopping the actual code disks. To make this attack harder to execute, the discs should have many false gates but there should be enough uncut disc surface to prevent going to false gate depth too easily. With 3 uncut parts on each active wheel, the attacker should have (4/7)^9 or 0.6 % change to have all discs on true or false gate on first try. Because sidebar must be released to rotate the discs locating the false gates should be pretty hard. Once all discs have been rotated to false or true gates, the key will rotate slightly more which will allow detecting this situation. After that, locating more true or false gates per discs is easier because one disc can be changed at a time. Note that disc locking bar must have less tolerance than the sidebar to prevent feeling the sides of the sidebar touching the notches. Also note that the surface of the sidebar and code disks should be as smooth as possible to make it harder to detect if a disk is grinding on sidebar. In optimal case the grinding against cylinder inside and disk locking bar is much higher than the grinding between the disk and sidebar.
 - Possible tentative attack #2: ???
 
-## Additional information about disc detainer locks
+# Additional information about disc detainer locks
 
 - Generic info about mechanical locks: Black Hat Locksmithing - SHA2017 - Matt Smith: https://youtu.be/6poAidpNEAc
 - Generic info about disk detainer locks by Bosnianbill: https://youtu.be/rMIEPkaadq0
@@ -143,15 +143,6 @@ I think that the half-pipe keyhole shape in this design is at least as safe as t
 - Generic info about picking mechanical locks with tentative method by Schuyler Towne: https://youtu.be/JdpP7yPY4ls
 - We need to start attacking Disc Detainer locks. Shmoocon Firetalks 2011: https://youtu.be/nT0PDQUZi74
 - https://toool.nl/Publications - Han Fey articles about Abloy all locks manufactured before 2006.
-
-## Special thanks
-
-- Lock Picking Lawyer and Bosnianbill for making lock picking videos both interesting and funny, and creating the Community Pick (or "The pick that Bosnianbill and I made").
-- Han Fey for documenting many Abloy cores in https://toool.nl/Publications
-- Matt "Huxleypig" Smith for documenting vulnerabilities of many disk detainer locks publicly.
-- Tarehjerne for creating a very clear video about Protec 2 (https://youtu.be/6zVSJ_wauwg) and providing info about disk detainer locks in general.
-- idanhurja for publishing lots of information about modern Abloy locks including publicly showing the picking tip he used for Protec 2 (https://youtu.be/AsG90UGRTpw) and documenting the similarities and differences of Exec and Easy: https://youtu.be/bH5936vuLlY and https://youtu.be/AEXP4zczivM
-- Schuyler Towne for publishing easy to explanations about picking locks with tentative method in general.
 
 ## Abloy Classic measurements (official numbers unknown)
 
@@ -165,4 +156,13 @@ I think that the half-pipe keyhole shape in this design is at least as safe as t
 - Sidebar diameter 1.5 - 2.0 mm?
 - The cylinder is also called as plug or carriage in various sources.
 - Abloy classic key width: 6 mm
+
+# Special thanks
+
+- Lock Picking Lawyer and Bosnianbill for making lock picking videos both interesting and funny, and creating the Community Pick (or "The pick that Bosnianbill and I made").
+- Han Fey for documenting many Abloy cores in https://toool.nl/Publications
+- Matt "Huxleypig" Smith for documenting vulnerabilities of many locks, including disk detainer locks publicly.
+- Tarehjerne for creating a very clear video about Protec 2 (https://youtu.be/6zVSJ_wauwg) and providing info about disk detainer locks in general.
+- idanhurja for publishing lots of information about modern Abloy locks including publicly showing the picking tip he used for Protec 2 (https://youtu.be/AsG90UGRTpw) and documenting the similarities and differences of Exec and Easy: https://youtu.be/bH5936vuLlY and https://youtu.be/AEXP4zczivM
+- Schuyler Towne for publishing easy to explanations about picking locks with tentative method in general.
 
