@@ -13,7 +13,7 @@ I'm calling this lock design "Community Core", similar to "Community Pick" devel
 This is still work in progress (WIP) version and is not a ready design yet.
 
 - The naming of the parts uses Abloy style naming: the whole lock body is called "housing" (some other lock designs may call this "cylinder"), the moving part touching the housing is called "cylinder" (some other lock designs may call this "plug") and inside the cylinder are "spacers" (some other lock designs may call these "washers") and "disks" (some other lock designs may call these "tumbler disks" or "detainer disks"). In addition, this document uses wording "code disks" to refer to disks with secret cut positions, namely all other disks but the first and last.
-- All the disks have true gates in zero cut position. It should be obvious how to move the gate for each disk if you understand how disk detainer locks work in general.
+- The disk key cuts can be defined using custom properties in object ".KEYCUTS". The key cuts should be defined before exporting parts into STL files.
 - I'm not happy with the mechanical strength of this lock; I now think that it would be better to limit the movement of code disks similar to original Abloy Classic design. The reason I avoided that design is that it leaves more space inside the lock and allows more brute force attacks especially when the cylinder is made out of brass. However, that design allows overlapping the cuts and the limiter during the disk movement and doesn't require so much empty space near the disk locking bar area. This initial design uses the disk locking bar as both disk rotation limiter and disk locking mechanism and the extra space needed makes both functions weaker in practice.
 - The cylinder rotation limiter needs more work. This design is more like proof of concept. I think something closer to mechanism used in Protec would be okay and should be free of patents, too.
 
@@ -81,9 +81,11 @@ In short, Apache License 2.0 guarantees that all the work by [authors](AUTHORS) 
 
 As for the design patents, as the visual design presented here looks similar to [Abloy Profile which has been manufactured since 1977 and its patents have expired in 1999](http://www.lockwiki.com/index.php/Abloy_Profile), it should be pretty safe to assume this design doesn't infringe any non-expired design patents.
 
-## Known infringing patents
+## Known IP rights that this design is potentially infringing
 
 None known but this is not a promise that none can exist due the way patent system works. This section will be extended if any known patents appear.
+
+I've been informed in private correspondence that Matt Smith may have some yet undisclosed design rights that this design may infringe in theory.
 
 # Development
 
