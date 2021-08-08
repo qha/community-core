@@ -26,6 +26,8 @@ This is still work in progress (WIP) version and is not a ready design yet.
 - Use Outliner view at the top right of the window to show and hide the parts of the lock. Use the "Eye" icon to hide parts in viewport area to better see the inside of the lock.
 - Use small buttons on the top right of the viewport area to toggle the X-ray view or wireframe view to see more details.
 
+As an alternative, if you're only interested in different parts, GitHub can display [the exported STL objects directly in your web browser](stl-export).
+
 # Design
 
 The design of this lock core is based on Abloy Classic design which was originally designed in 1905 and has been commercially sold since 1920 so basic part of the design should be patent free worldwide. The patent system being as broken as it is I cannot know if some part of the design infringes some patent somewhere. This is all my own design except for the Abloy Classic compatible parts.
