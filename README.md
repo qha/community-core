@@ -34,7 +34,7 @@ The design of this lock core is based on Abloy Classic design which was original
 
 Key points of the design and differences to original Abloy Classic design and rationale for each change:
 
-- Maximum code disk orientation range has been extended from 0-90 degress to 0-108 degrees. The rationale for this change is to make the "problem 50" documented by Matt "Huxleypig" Smith impossible to sidestep for the attacker. (https://youtu.be/GBaihzVxs5Y?t=1740). In practise, the picker would need to adjust 108 degrees of rotation per disks but the remaining space for the pick movement is 180-108 = 72 degrees. In addition, the circular inner edge requires any flag-like picking tool to reach the edge of the keyhole to successfully turn the disk and this design hopefully prevents any simple picking tool from being successful. ![3D view of the solution to "problem 50"](images/problem-50-solved.png)
+- Maximum code disk orientation range has been extended from 0-90 degress to 0-108 degrees. The rationale for this change is to make the "problem 50" documented by Matt "Huxleypig" Smith impossible to sidestep for the attacker. (https://youtu.be/GBaihzVxs5Y?t=1740). Note that similar design is described in [year 1978 US patent 4083212](https://patents.google.com/patent/US4083212A/en) so there's really nothing new here. In practise, the picker would need to adjust 108 degrees of rotation per disks but the remaining space for the pick movement is 180-108 = 72 degrees. In addition, the circular inner edge requires any flag-like picking tool to reach the edge of the keyhole to successfully turn the disk and this design hopefully prevents any simple picking tool from being successful. ![3D view of the solution to "problem 50"](images/problem-50-solved.png)
 - In addition to classic sidebar there's another disk locking bar which has narrower cut in the housing forcing it to bind into code disk cuts before the actual sidebar is pressed against the code disks. This prevents rotating the code disks to search for gate positions while applying pressure to sidebar. ![2D view of the disk locking bar"](images/disk-locking-bar.png)
 - The code disks and spacers have interlocking profile to avoid decoding attacks that depend on pushing a thin tool between the disks to feel the gates. ![3D view profile of code disks and spacers"](images/interlocking-spacers-and-code-disks.png)
 - The code disks are closer to each other in the keyhole to prevent inserting a picking tool that can be rotated in the space between the disks (most Abloy designs have about 0.5 mm space between each disk). ![3D view to show that there's no extra space between the code disks insiden the keyhole"](images/no-space-between-disks-in-keyhole.png)
@@ -64,6 +64,36 @@ It should be obvious how to use this same design for padlocks and doors. Practic
 - First and last disk must be rotated with zero cut key and neither disk locking bar or sidebar can touch the code disks before these two disks are fully rotated. This should reduce the available space usable to any picking tools. I also considered tensioning from random disc but figuring out which disc to apply the tension requires only small extra work from the picker and non-zero cut at the tip of the key makes inserting the key harder if discs are not in correct starting position before inserting the key. Note that after discs have been locked, any disc can be used to tension the lock. This also designed to prevent self-impressioning because all discs bind thanks to disc locking bar activating before sidebar.
 - Discs are nearly next to each other in keyway to prevent rotating picking heads between discs.
 - The parts should be manufactured with 0.1 mm precision to have a good lock. I think having 0.5 mm precision should still end up a working lock but the tolerances would be so bad that tentative attack would be more feasible
+
+# Mechanical manufacturing
+
+As I'm intending this design to be both safe and cheap, here're some notes how I imagine the lock could be mass manufactured for cheap:
+
+- Use stamping machine to stamp washers out of 0.95 mm stainless steel (cauge 20).
+
+- Use stamping machine to stamp code disk middle parts out of 1.1 mm stainless steel (cauge 19). Note that the middle parts require 7 different shapes (one shape for each key cut + one shape for the first and last disk used for tensioning the lock with the key).
+
+- Use stamping machine to stamp code disk side parts out of 0.43 mm stainless steel (cauge 27). (These parts are identical for all code disks.)
+
+- Spot weld code disk side parts to both sides of code disks. With a key shaped guide it should be possible to stack one side, middle, another side pretty accurately to each other and then spot weld the whole stack with two spot welds near the key shaped guide.
+
+This should result in code disk having total width of 0.43 + 1.1 + 0.43 mm = 1.96 mm. The design space for a code disk is 2.0 mm so there should be 0.04 mm of tolerance. The sides of code disks are slightly less than the width of the washer (0.95 - 0.43 - 0.43 mm = 0.09 mm) which is hopefully enough to allow code disks spin in place without touching each other.
+
+If spot welding warps the disks, one can try using 0.41 mm (cauge 28) or 0.36 mm (cauge 29) sheet metal for the sides of the code disks.
+
+(See https://en.wikipedia.org/wiki/Sheet_metal#Stainless_steel for a list of standard sheet metal thickness table.)
+
+The less space there is between the washers and the sides of the code disks, the harder it's to insert feeling tip between the disks to decode the lock by feeling the true gates. Smaller empty space also reduces performance of attack where tool is used to just overtension the lock and crash the disks into empty space to allow sidebars to collapse into the disks in any disk position.
+
+Housing body should be possible to manufacture by first drilling two holes for the sidebar cuts and then drilling or milling the main housing space. Note that the part near the front of the lock needs idention for the middle of the first code disk (tensioning disk because this is must be always zero cut because its task is to keep disk locking bar and side bar away from the actual code disks until the lock is tensioned). The indention is required avoid inserting thin wire or other sensing tip between the housing body and the first disk to the sidebar to feel the gates.
+
+Note that the last washer should be spot welded to the end wall, too, to avoid inserting feeling tip between the rear of the lock and the last code disks to feel the true gates.
+
+If lock needs to be manufactured for even cheaper, code disk sides could be left out and front and rear surfaces can be flush. However, this will allow attacker to use two additional attack methods:
+
+- Use Abloy Classic style picking tool where the tip can be rotated between the disks (available space is about the thickness of the washer) which allows setting all the disks much more easily.
+
+- Feel the true gate of each code disk by inserting a feeling tip between the code disk and the washer next to it. To allow disks to freely spin, there must be some tolerance between all the disks and washers and attacker can compress the stack on both sides of the measured disk to make space for the feeler tip. Note that the attacker doesn't need to be able to rotate any disks while the stack is compressed. The shape between the washer and the code disk side parts is designed to prevent this attack. Note that the max compressibility of the disks + washers stack should be less than the width of the code disk side part material, 0.43 mm in above example.
 
 # Ideology - why I'm doing this
 
@@ -148,6 +178,12 @@ I think that the half-pipe keyhole shape in this design is at least as safe as t
 - We need to start attacking Disc Detainer locks. Shmoocon Firetalks 2011: https://youtu.be/nT0PDQUZi74
 - https://toool.nl/Publications - Han Fey articles about Abloy all locks manufactured before 2006.
 
+Generic books:
+
+- Graham Pulford’s “High-Security Mechanical Locks: An Encyclopedic Reference”, see the review by LockPickingLawyer: https://youtu.be/BZDgI86jUg0
+
+- American Genius: Nineteenth Century Bank Locks and Time Locks (ISBN-13: 978-1593720162)
+
 ## Abloy Classic measurements (official numbers unknown)
 
 - Code disk diameter: 11.8 mm
@@ -160,6 +196,7 @@ I think that the half-pipe keyhole shape in this design is at least as safe as t
 - Sidebar diameter 1.5 - 2.0 mm?
 - The cylinder is also called as plug or carriage in various sources.
 - Abloy classic key width: 6 mm
+- DBS locking bar 1.0 or 1.2 mm?
 
 # Special thanks
 
