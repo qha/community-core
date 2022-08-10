@@ -69,17 +69,17 @@ It should be obvious how to use this same design for padlocks and doors. Practic
 
 As I'm intending this design to be both safe and cheap, here're some notes how I imagine the lock could be mass manufactured for cheap:
 
-- Use stamping machine to stamp washers out of 0.95 mm stainless steel (cauge 20).
+- Use stamping machine to stamp washers out of 0.95 mm stainless steel (gauge 20).
 
-- Use stamping machine to stamp code disk middle parts out of 1.1 mm stainless steel (cauge 19). Note that the middle parts require 7 different shapes (one shape for each key cut + one shape for the first and last disk used for tensioning the lock with the key).
+- Use stamping machine to stamp code disk middle parts out of 1.1 mm stainless steel (gauge 19). Note that the middle parts require 7 different shapes (one shape for each key cut + one shape for the first and last disk used for tensioning the lock with the key).
 
-- Use stamping machine to stamp code disk side parts out of 0.43 mm stainless steel (cauge 27). (These parts are identical for all code disks.)
+- Use stamping machine to stamp code disk side parts out of 0.43 mm stainless steel (gauge 27). (These parts are identical for all code disks.)
 
 - Spot weld code disk side parts to both sides of code disks. With a key shaped guide it should be possible to stack one side, middle, another side pretty accurately to each other and then spot weld the whole stack with two spot welds near the key shaped guide.
 
 This should result in code disk having total width of 0.43 + 1.1 + 0.43 mm = 1.96 mm. The design space for a code disk is 2.0 mm so there should be 0.04 mm of tolerance. The sides of code disks are slightly less than the width of the washer (0.95 - 0.43 - 0.43 mm = 0.09 mm) which is hopefully enough to allow code disks spin in place without touching each other.
 
-If spot welding warps the disks, one can try using 0.41 mm (cauge 28) or 0.36 mm (cauge 29) sheet metal for the sides of the code disks.
+If spot welding warps the disks, one can try using 0.41 mm (gauge 28) or 0.36 mm (gauge 29) sheet metal for the sides of the code disks.
 
 (See https://en.wikipedia.org/wiki/Sheet_metal#Stainless_steel for a list of standard sheet metal thickness table.)
 
